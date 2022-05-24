@@ -10,6 +10,7 @@
 puts "Seeding users..."
 Customer.create([
   {
+  
     username: "Freddie",
     password: "foodie",
     email: "freddie@gmail.com"
@@ -30,42 +31,6 @@ Customer.create([
     email: "ashley@gmail.com"
   }
 ])
-
-puts "Seeding Reviews..."
-Review.create([
-  {
-    rating: "5",
-    content: "I Love this Dish!",
-    customer_id: 1,
-    menu_item_id: 2 
-  },
-  {
-    
-    rating: "4",
-    content: "Yeah Mon!",
-    customer_id: 2,
-    menu_item_id: 1
-  },
-  {
-    rating: "3",
-    content: "I love all their natural juices but this one hits the spot!",
-    customer_id: 3,
-    menu_item_id: 15
-  },
-  {
-    rating: "2",
-    content: "Wish I could have had it warm",
-    customer_id: 4,
-    menu_item_id: 12
-  },
-  {
-    rating: "4",
-    content: "This Patties are so juicy!",
-    customer_id: 2,
-    menu_item_id: 9
-  }
-])
-
 puts "Seeding Menu_item..."
 MenuItem.create([
   {
@@ -189,22 +154,56 @@ MenuItem.create([
   }
 ])
 
+puts "Seeding Reviews..."
+Review.create([
+  {
+    customer_id: 1,
+    menu_item_id: 2,
+    rating: 5,
+    content: "I Love this Dish!"
+  },
+  {
+    customer_id: 2,
+    menu_item_id: 1,
+    rating: 4,
+    content: "Yeah Mon!"
+  },
+  {
+    customer_id: 3,
+    menu_item_id: 15,
+    rating: 3,
+    content: "I love all their natural juices but this one hits the spot!"
+  },
+  {
+    customer_id: 4,
+    menu_item_id: 12,
+    rating: 2,
+    content: "Wish I could have had it warm"
+  },
+  {
+    customer_id: 2,
+    menu_item_id: 9,
+    rating: 4,
+    content: "This Patties are so juicy!"
+  }
+])
+
 puts "Seeding Order..."
 Order.create([
   {
     customer_id: 1,
-    menu_item_id: [1, 15],
-    total: "15.00"
+    menu_item_id: 1,
+    total: "10.00"
   },
   {
     customer_id: 3,
-    menu_item_id: [5, 17],
-    total: "17.00"
+    menu_item_id: 5,
+    total: "15.00"
   },
   {
     customer_id: 4,
-    menu_item_id: [6, 16],
-    total: "15.00"
+    menu_item_id: 6,
+    total: "18.00"
   }
 
 ])
